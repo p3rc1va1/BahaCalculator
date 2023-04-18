@@ -1,32 +1,9 @@
-class Calculator:
+class BahaCalculator:
     """
     A class representing a basic calculator.
 
     Attributes:
         memory (float): The current value in the calculator's memory.
-
-    Methods:
-        add(value): Add a value to the current memory.
-        subtract(value): Subtract a value from the current memory.
-        multiply(value): Multiply the current memory by a value.
-        divide(value): Divide the current memory by a value.
-        root(n): Take the nth root of the current memory.
-        reset(): Reset the memory to 0.
-
-    Example Usage:
-        >>> c = Calculator()
-        >>> c.add(2)
-        2.0
-        >>> c.subtract(1)
-        1.0
-        >>> c.multiply(3)
-        3.0
-        >>> c.divide(2)
-        1.5
-        >>> c.root(2)
-        1.224744871391589
-        >>> c.reset()
-        0.0
     """
 
     def __init__(self):
@@ -39,7 +16,7 @@ class Calculator:
         """
         Add a value to the current memory.
 
-        Args:
+        Input:
             value (float): The value to add to the current memory.
 
         Returns:
@@ -52,7 +29,7 @@ class Calculator:
         """
         Subtract a value from the current memory.
 
-        Args:
+        Input:
             value (float): The value to subtract from the current memory.
 
         Returns:
@@ -65,7 +42,7 @@ class Calculator:
         """
         Multiply the current memory by a value.
 
-        Args:
+        Input:
             value (float): The value to multiply the current memory by.
 
         Returns:
@@ -78,7 +55,7 @@ class Calculator:
         """
         Divide the current memory by a value.
 
-        Args:
+        Input:
             value (float): The value to divide the current memory by.
 
         Returns:
@@ -93,12 +70,14 @@ class Calculator:
         """
         Take the nth root of the current memory.
 
-        Args:
+        Input:
             n (int): The root to take of the current memory.
 
         Returns:
             float: The new value of the calculator's memory.
         """
+        if n == 0:
+            return 'Cant take the 0th root' #check for zero division
         self.memory **= (1/n)
         return self.memory
 
@@ -110,6 +89,4 @@ class Calculator:
             float: The new value of the calculator's memory (0.0).
         """
         self.memory = 0.0
-        return self.memory
-
-c = Calculator()
+        return self.memory  
